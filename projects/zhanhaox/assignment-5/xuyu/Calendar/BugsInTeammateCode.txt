@@ -1,0 +1,11 @@
+The first bug I found is in the Appt class, the isValid() method failed during testing.
+Appt isValid()
+Description:
+When call isValid() function, it need to check the value for appointment is valid or not. If the appointment is valid, the function set valid value for true, otherwise for false.
+How to find:
+In the test file, I set up some values for appt.
+And call getValid() function to test the return value. The month for appt1 is negative, so the expected value for valid is false, but it returns true. Then, I change asserFlase to assertTrue, the test passed. So, I can make sure the bug is in isValid() methods.
+In the isValid() method, it first initial valid to false, and then check each value, if these are all in the range valid equal to true. For the checking of day in month, it is “&&” instead of “||”.
+The second bug I found is in CalDay class, the CalDay method failed during my testing.
+CalDay public CalDay()
+Use default construction to set up new calday value, and use assert function to check isValid function return value. Expanded value is false, but it reture true.The default construction need to initial valid equal to false.
